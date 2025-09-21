@@ -1,4 +1,5 @@
 RubyLLM.configure do |config|
+  config.default_model = "claude-3-5-haiku-20241022"
   config.anthropic_api_key = Rails.application.credentials.dig(:anthropic_api_key)
   # config.default_model = "gpt-4.1-nano"
 
