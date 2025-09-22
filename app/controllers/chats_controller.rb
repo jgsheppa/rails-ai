@@ -1,5 +1,5 @@
 class ChatsController < ApplicationController
-  before_action :set_chat, only: [:show]
+  before_action :set_chat, only: [ :show ]
 
   def index
     @chats = Chat.order(created_at: :desc)
@@ -14,9 +14,10 @@ class ChatsController < ApplicationController
     return unless prompt.present?
 
     @chat = Chat.create!(model: model)
+
     ChatResponseJob.perform_later(@chat.id, prompt)
 
-    redirect_to @chat, notice: 'Chat was successfully created.'
+    redirect_to @chat, notice: "Chat was successfully created."
   end
 
   def show

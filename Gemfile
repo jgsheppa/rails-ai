@@ -63,3 +63,5 @@ group :test do
 end
 
 gem "ruby_llm", "~> 1.8"
+
+gem "redcarpet"

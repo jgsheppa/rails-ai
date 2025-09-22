@@ -1,0 +1,19 @@
+<div id="<%= dom_id context %>">
+  <p>
+    <strong>Title:</strong>
+    <%= context.title %>
+  </p>
+
+  <p>
+    <strong>System Prompt:</strong>
+    <div><%= link_to context.system_prompt.filename, context.system_prompt %></div>
+  </p>
+
+  <p>
+    <strong>Markdown:</strong>
+    <% context.markdown.each do |file| %>
+      <div><%= link_to file.filename, file %></div>
+    <% end %>
+  </p>
+
+</div>
